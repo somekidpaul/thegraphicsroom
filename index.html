@@ -966,7 +966,8 @@ var DiviPlusFrontendData = {"ajaxurl":"/wp-admin/admin-ajax.php","ajaxnonce":"54
         headers: { 'Accept': 'application/json' }
       }).then(function(r) {
         if (r.ok) {
-          form.innerHTML = '<p style="text-align:center;padding:40px 20px;font-size:18px;color:#000;">Thank you! Your message has been sent successfully.</p>';
+          btn.textContent = 'Sent!';
+          setTimeout(function() { window.location.reload(); }, 1500);
         } else { throw new Error('fail'); }
       }).catch(function() {
         alert('There was an error sending your message. Please try again.');
